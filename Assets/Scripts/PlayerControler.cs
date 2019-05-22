@@ -27,4 +27,20 @@ public class PlayerControler : MonoBehaviour
             transform.Rotate(new Vector3(0, 0, RotateSpeed));
         }
     }
+    void slow()
+    {
+        Speed -= 100;
+        print("Worked");
+    }
+    private void OnTriggerEnter2D(Collider2D other)
+    {
+        if (other.gameObject.CompareTag("speed"))
+        {
+            print("A");
+            Speed += 100;
+            Destroy(other.gameObject);
+            Invoke("slow", 5);
+
+        }
+    }
 }
