@@ -6,6 +6,7 @@ public class CameraController : MonoBehaviour
 {
     private BoxCollider MovingPoint;
     private bool HasCollided;
+    public float CameraSpeed;
 
     void Start()
     {
@@ -17,7 +18,7 @@ public class CameraController : MonoBehaviour
     {
             if ((other.GetComponent<Rigidbody2D>().velocity.x>0)&(other.gameObject.CompareTag("Player"))&(HasCollided==false))
             {
-                transform.position = new Vector3(transform.position.x + (other.GetComponent<Rigidbody2D>().velocity.x) / 43, transform.position.y, transform.position.z);
+                transform.position = new Vector3(transform.position.x + (other.GetComponent<Rigidbody2D>().velocity.x) / (100-CameraSpeed), transform.position.y, transform.position.z);
                 HasCollided = true;
             }
     }
@@ -25,5 +26,6 @@ public class CameraController : MonoBehaviour
     void Update()
     {
         HasCollided = false;
+
     }
 }

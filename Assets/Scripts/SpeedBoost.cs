@@ -2,7 +2,7 @@
 using System.Collections.Generic;
 using UnityEngine;
 
-public class boost_speed : MonoBehaviour
+public class SpeedBoost : MonoBehaviour
 {
     public float Speed;
     // Start is called before the first frame update
@@ -11,8 +11,8 @@ public class boost_speed : MonoBehaviour
         
     }
 
-    private void OnTriggerEnter2D(Collider2D collision)
+    private void OnTriggerEnter2D(Collider2D other)
     {
-        
+
     }
 }
